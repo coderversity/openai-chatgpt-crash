@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html, body {
+    @apply m-0 p-0 bg-black;
+  }
+
+  * {
+    @apply text-white;
+  }
+
+  input, textarea {
+    @apply w-full bg-gray-800 outline-none focus:border-none p-2 border border-blue-200 rounded-sm;
+  }
+
+  h1 {
+    @apply text-4xl font-semibold py-2 text-center;
+  }
+
+  h3 {
+    @apply text-2xl font-bold py-2;
+  }
+
+  p {
+    @apply leading-8;
+  }
+}
