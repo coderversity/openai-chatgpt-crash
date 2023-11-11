@@ -20,13 +20,14 @@ const HomePage = () => {
       label: 'Text'
     },
     {
-      id: 'image',
-      value: 'image',
-      label: 'Image'
+      id: 'images',
+      value: 'images',
+      label: 'Images'
     },
   ];
 
   const handleChange = (e) => {
+    setResults(null);
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
@@ -75,7 +76,7 @@ const HomePage = () => {
                 required
               ></textarea>
             </div>
-            <button type='submit' className='btn'>Generate</button>
+            <button type='submit' className='btn' disabled={loading}>Generate</button>
           </form>
         </section>
 

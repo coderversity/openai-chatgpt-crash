@@ -1,4 +1,4 @@
-import openai, { OPENAI_MODEL } from "@/utils/openai";
+import openai, { TEXT_MODEL } from "@/utils/openai";
 
 import { NextResponse } from "next/server";
 
@@ -6,8 +6,8 @@ export async function POST(request) {
     try {
         const { prompt } = await request.json();
 
-        const completion = await openai.chat.completions.create({
-            model: OPENAI_MODEL,
+        const response = await openai.createChatCompletion({
+            model: TEXT_MODEL,
             temperature: 0.7,
             messages: [
                 {
@@ -21,7 +21,7 @@ export async function POST(request) {
             ]
         });
 
-        const text = completion.choices[0].message.content.trim();
+        const text = response.data.choices[0].message.content.trim();
         return NextResponse.json({ data: text });
     } catch (err) {
         if (err.response) {

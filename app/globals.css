@@ -46,6 +46,10 @@
     @apply bg-blue-700 hover:bg-blue-800 w-full p-2 rounded-full font-bold uppercase;
   }
 
+  .btn:disabled {
+    @apply bg-gray-700;
+  }
+
   .output {
     @apply flex justify-center items-center h-screen bg-gray-900 shadow-sm;
   }

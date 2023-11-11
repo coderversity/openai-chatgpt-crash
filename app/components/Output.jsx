@@ -11,8 +11,14 @@ const Output = (props) => {
                 <div className="h-screen">
                     {contentType === 'text' ? (
                         <p>{results?.data}</p>
-                    ) : contentType === 'image' && (
-                        <div></div>
+                    ) : contentType === 'images' && (
+                        <div className="grid grid-cols-2 gap-4">
+                            {results.data?.map((imageUrl, index) => (
+                                <div key={index}>
+                                    <img src={imageUrl} alt='photo' />
+                                </div>
+                            ))}
+                        </div>
                     )}
                 </div>
             ) : loading ? (
