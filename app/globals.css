@@ -11,8 +11,13 @@
     @apply text-white;
   }
 
-  input, textarea {
-    @apply w-full bg-gray-800 outline-none focus:border-none p-2 border border-blue-200 rounded-sm;
+  input[type='radio'],
+  textarea {
+    @apply w-full bg-gray-900 outline-none focus:border-none p-2 border border-gray-500 rounded-sm;
+  }
+
+  textarea {
+    @apply h-[6rem];
   }
 
   h1 {
@@ -23,7 +28,53 @@
     @apply text-2xl font-bold py-2;
   }
 
-  p {
-    @apply leading-8;
+  input[type="radio"] {
+    @apply appearance-none w-[1rem] rounded-full outline-none;
+  }
+
+  input[type='radio']:checked {
+    @apply bg-blue-400;
+  }
+}
+
+@layer components {
+  .form-input {
+    @apply py-4 space-y-2;
+  }
+
+  .btn {
+    @apply bg-blue-700 hover:bg-blue-800 w-full p-2 rounded-full font-bold uppercase;
+  }
+
+  .output {
+    @apply flex justify-center items-center h-screen bg-gray-900 shadow-sm;
+  }
+
+  .loader {
+    @apply flex justify-center h-screen;
+  }
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: lightblue;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  color: white;
+  margin: 0 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
   }
 }

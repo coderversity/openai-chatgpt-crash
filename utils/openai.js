@@ -1,9 +1,9 @@
 export const OPENAI_MODEL = "gpt-4";
 
-const { Configuration, OpenAIApi } = require("openai");
+import OpenAI from "openai";
 
-const configuration = new Configuration({
+const openai = new OpenAI({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
 });
-const openai = new OpenAIApi(configuration);
+
 export default openai;
