@@ -11,8 +11,8 @@ const Output = (props) => {
                 <div className="h-screen">
                     {contentType === 'text' ? (
                         <p>{results?.data}</p>
-                    ) : contentType === 'images' && (
-                        <div className="grid grid-cols-2 gap-4">
+                    ) : contentType === 'image' && (
+                        <div className="w-full">
                             {results.data?.map((imageUrl, index) => (
                                 <div key={index}>
                                     <img src={imageUrl} alt='photo' />
@@ -26,7 +26,7 @@ const Output = (props) => {
             ) : results?.error ? (
                 <p className="text-xl text-red-600">{results.error}</p>
             ) : (
-                <p className="text-xl">Please select a content contentType.</p>
+                <p className="text-xl">Please select a content type.</p>
             )}
         </section>
     )

@@ -20,9 +20,9 @@ const HomePage = () => {
       label: 'Text'
     },
     {
-      id: 'images',
-      value: 'images',
-      label: 'Images'
+      id: 'image',
+      value: 'image',
+      label: 'Image'
     },
   ];
 

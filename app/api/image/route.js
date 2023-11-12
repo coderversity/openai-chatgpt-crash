@@ -7,9 +7,9 @@ export async function POST(request) {
         const { prompt } = await request.json();
 
         const response = await openai.createImage({
+            model: IMAGE_MODEL,
             prompt,
-            n: 4,
-            size: "512x512",
+            n: 1,
         });
 
         const imageUrls = response.data.data?.map(image => image.url);
