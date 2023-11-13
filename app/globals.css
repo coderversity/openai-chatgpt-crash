@@ -55,15 +55,8 @@
   }
 
   .loader {
-    @apply flex justify-center h-screen;
+    @apply flex justify-center items-center h-screen;
   }
-}
-
-.loader {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
 }
 
 .spinner {
